@@ -1,0 +1,63 @@
+import 'package:flutter/material.dart';
+import 'package:notes_app/widget/add_notes_bottomsheet.dart';
+import 'package:notes_app/widget/notespagebody.dart';
+
+class NotesPage extends StatelessWidget {
+  const NotesPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+
+
+
+      floatingActionButton: SizedBox(
+        width: 70,
+        height: 70,
+        child: FloatingActionButton(
+          onPressed: () {
+            showModalBottomSheet(
+                context: context,
+                builder: (context) {
+                  return const AddNotes();
+                });
+          },
+          child:  Icon(
+             Icons.add,
+            color: Colors.black,
+          ),
+          backgroundColor: const Color.fromARGB(255, 0, 255, 200),
+          shape: const CircleBorder(),
+        ),
+      ),
+
+
+
+      appBar: AppBar(
+          backgroundColor: Colors.black,
+          title: const Padding(
+            padding: EdgeInsets.only(left: 20),
+            child: Text(
+              "Notes",
+              style: TextStyle(fontSize: 30),
+            ),
+          ),
+          actions: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(right: 20),
+              child: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.search,
+                    size: 30,
+                  )),
+            ),
+          ]
+          ),
+
+
+          
+      body: const NotesPageBody(),
+    );
+  }
+}
