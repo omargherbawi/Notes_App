@@ -8,31 +8,26 @@ class NotesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-
-
       floatingActionButton: SizedBox(
         width: 70,
         height: 70,
         child: FloatingActionButton(
           onPressed: () {
             showModalBottomSheet(
+                isScrollControlled: true,
                 context: context,
                 builder: (context) {
                   return const AddNotes();
                 });
           },
-          child:  Icon(
-             Icons.add,
+          child: Icon(
+            Icons.add,
             color: Colors.black,
           ),
           backgroundColor: const Color.fromARGB(255, 0, 255, 200),
           shape: const CircleBorder(),
         ),
       ),
-
-
-
       appBar: AppBar(
           backgroundColor: Colors.black,
           title: const Padding(
@@ -52,11 +47,7 @@ class NotesPage extends StatelessWidget {
                     size: 30,
                   )),
             ),
-          ]
-          ),
-
-
-          
+          ]),
       body: const NotesPageBody(),
     );
   }
