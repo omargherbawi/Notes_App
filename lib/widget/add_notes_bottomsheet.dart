@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/Cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:notes_app/Cubits/notes_cubit/notes_cubit_cubit.dart';
 
 import '../Cubits/add_note_cubit/add_note_state.dart';
 import 'add_note_form.dart';
@@ -22,6 +23,7 @@ class AddNotes extends StatelessWidget {
             }
 
             if (state is AddNoteSuccess) {
+              BlocProvider.of<NotesCubitCubit>(context).fetchAllNotes();
               ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                 content: Text(
                   "note added successfully",
