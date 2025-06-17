@@ -14,8 +14,8 @@ class NotesPageBody extends StatefulWidget {
 class _NotesPageBodyState extends State<NotesPageBody> {
   @override
   void initState() {
-    BlocProvider.of<NotesCubitCubit>(context).fetchAllNotes();
     super.initState();
+    BlocProvider.of<NotesCubitCubit>(context).fetchAllNotes();
   }
 
   @override

@@ -92,7 +92,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                         title: title!,
                         subtitle: subtitle!,
                         date: formatteddate,
-                        color: Colors.pink.value);
+                        color: const Color.fromARGB(255, 237, 185, 73).value);
                     BlocProvider.of<AddNoteCubit>(context).addnote(note);
                   } else {
                     autovalidateMode = AutovalidateMode.always;
